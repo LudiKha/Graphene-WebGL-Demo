@@ -24,11 +24,11 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL 2.0.loader.js";
+      var loaderUrl = buildUrl + "/docs.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebGL 2.0.data",
-        frameworkUrl: buildUrl + "/WebGL 2.0.framework.js",
-        codeUrl: buildUrl + "/WebGL 2.0.wasm",
+        dataUrl: buildUrl + "/docs.data",
+        frameworkUrl: buildUrl + "/docs.framework.js",
+        codeUrl: buildUrl + "/docs.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "CupBearer Interactive",
         productName: "Graphene",
@@ -48,7 +48,7 @@
         canvas.style.width = "960px";
         canvas.style.height = "600px";
       }
-      canvas.style.background = "url('" + buildUrl + "/WebGL 2.0.jpg') center / cover";
+      canvas.style.background = "url('" + buildUrl + "/docs.jpg') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
