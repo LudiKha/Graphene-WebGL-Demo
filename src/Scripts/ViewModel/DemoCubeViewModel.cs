@@ -12,21 +12,18 @@ public class DemoCubeViewModel : MonoBehaviour, IModel
   [Draw(ControlType.SubTitle), Bind(BindingMode.OneTime)]
   public string rotation = "Rotation";
 
-  [Draw, BindFloat("", 0.5f, 0, 1, "X Rotation")]
-  public BindableFloat RotationX;
-  [Draw, BindFloat("", 0.5f, 0, 1, "Y Rotation")]
-  public BindableFloat RotationY;
-  [Draw, BindFloat("", 0.5f, 0, 1, "Z Rotation")]
-  public BindableFloat RotationZ;
+  [Draw] public BindableFloat RotationX;
+  [Draw] public BindableFloat RotationY;
+  [Draw] public BindableFloat RotationZ;
+
+  [Draw(ControlType.Border)]
+  public byte border { get; set; }
 
   [Draw(ControlType.SubTitle), Bind(BindingMode.OneTime)]
   public string color = "Color";
-  [Draw]
-  public BindableFloat ColorR;
-  [Draw]
-  public BindableFloat ColorG;
-  [Draw]
-  public BindableFloat ColorB;
+  [Draw] public BindableFloat ColorR;
+  [Draw] public BindableFloat ColorG;
+  [Draw] public BindableFloat ColorB;
 
   private string hex = "#FFAE00";
   [Draw(ControlType.TextField), BindBaseField("", "Hex Color")]
@@ -53,19 +50,45 @@ public class DemoCubeViewModel : MonoBehaviour, IModel
     var renderer = cube.GetComponent<UnityEngine.Renderer>();
     material = Instantiate(renderer.material);
     renderer.material = material;
+
+    UpdateViewModel();
   }
 
-  private void RotationX_OnValueChange(object sender, float e) => SetRotation(360 * e);
+  [SerializeField]
+  Vector3 rotationEuler;
 
-  private void RotationY_OnValueChange(object sender, float e) => SetRotation(null, 360 * e);
+  private void RotationX_OnValueChange(object sender, float e) { rotationEuler.x = 180 * e; SetRotation(); }
 
-  private void RotationZ_OnValueChange(object sender, float e) => SetRotation(null, null, 360 * e);
+  private void RotationY_OnValueChange(object sender, float e) { rotationEuler.y = 180 * e; SetRotation(); }
+
+  private void RotationZ_OnValueChange(object sender, float e) { rotationEuler.z = 180 * e; SetRotation(); }
 
   private void SetRotation(float? x = null, float? y = null, float? z = null)
   {
     Vector3 oldRot = cube.rotation.eulerAngles;
     Vector3 newRot = new Vector3(x.HasValue ? x.Value : oldRot.x, y.HasValue ? y.Value : oldRot.y, z.HasValue ? z.Value : oldRot.z);
     cube.rotation = Quaternion.Euler(newRot);
+  }
+
+  private void SetRotation()
+  {
+    cube.rotation = Quaternion.Euler(rotationEuler);
+  }
+  [Sirenix.OdinInspector.Button]
+  public void UpdateViewModel()
+  {
+    // 0 - 360
+    //rotationEuler = cube.eulerAngles;
+    // Sign -180 - 180
+    //rotationEuler += new Vector3(-180, -180, -180);
+    rotationEuler.x = Vector3.SignedAngle(Vector3.forward, cube.forward, Vector3.right);
+    rotationEuler.y = Vector3.SignedAngle(Vector3.forward, cube.forward, Vector3.up);
+    rotationEuler.z = Vector3.SignedAngle(Vector3.up, cube.up, Vector3.forward);
+
+    RotationX.SetValueWithoutNotify(rotationEuler.x / 180);
+    RotationY.SetValueWithoutNotify(rotationEuler.y / 180);
+    RotationZ.SetValueWithoutNotify(rotationEuler.z / 180);
+    onModelChange?.Invoke();
   }
 
   private void ColorR_OnValueChange(object sender, float e) => SetColor(e);
@@ -85,7 +108,7 @@ public class DemoCubeViewModel : MonoBehaviour, IModel
   void SetColor (string hex)
   {
     if (hex.IndexOf('#') != 0)
-      hex.Insert(0, "#");
+     hex = hex.Insert(0, "#");
 
     this.hex = hex;
     if(ColorUtility.TryParseHtmlString(hex, out Color col))

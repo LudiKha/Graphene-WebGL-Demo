@@ -15,29 +15,29 @@ MonoBehaviour:
   <Title>k__BackingField: CREDITS
   <Render>k__BackingField: 1
   model:
-  - controlType: 0
-    Name: Graphene Sample
-    Value: 
+  - <ControlType>k__BackingField: 0
+    <Name>k__BackingField: Graphene
+    <Value>k__BackingField: 
     route: 
-    Description: 
+    <Description>k__BackingField: 
     addClass: 
     OnClick:
       m_PersistentCalls:
         m_Calls: []
-  - controlType: 1
-    Name: version 1.0.0
-    Value: 
+  - <ControlType>k__BackingField: 0
+    <Name>k__BackingField: v1.0
+    <Value>k__BackingField: 
     route: 
-    Description: 
+    <Description>k__BackingField: 
     addClass: 
     OnClick:
       m_PersistentCalls:
         m_Calls: []
-  - controlType: 8
-    Name: "Made with love, by Khaya Ludidi & Christoph R\xFCger"
-    Value: 
+  - <ControlType>k__BackingField: 0
+    <Name>k__BackingField: Made with love
+    <Value>k__BackingField: 
     route: 
-    Description: 
+    <Description>k__BackingField: 
     addClass: 
     OnClick:
       m_PersistentCalls:

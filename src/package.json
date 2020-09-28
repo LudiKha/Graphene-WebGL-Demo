@@ -2,10 +2,9 @@
   "name": "com.graphene.demo",
   "version": "0.0.1",
   "displayName": "Graphene Demo",
-  "description": "Demo project for Graphene UI Framework ",
+  "description": "Demo project for Graphene UI Framework",
   "unity": "2018.3",
   "dependencies": {
-	"com.graphene.components": "file:/GameDev/OpenSource/Graphene-Components/src"
   },
   "keywords": [],
   "author": {

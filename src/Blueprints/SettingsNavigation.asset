@@ -15,47 +15,42 @@ MonoBehaviour:
   <Title>k__BackingField: 
   <Render>k__BackingField: 1
   model:
-  - controlType: 0
-    Name: VIDEO
-    Value: 
+  - <Name>k__BackingField: VIDEO
+    <Value>k__BackingField: 
     route: settings/video
-    Description: 
+    <Description>k__BackingField: 
     addClass: 
     OnClick:
       m_PersistentCalls:
         m_Calls: []
-  - controlType: 0
-    Name: GRAPHICS
-    Value: 
+  - <Name>k__BackingField: GRAPHICS
+    <Value>k__BackingField: 
     route: /graphics
-    Description: 
+    <Description>k__BackingField: 
     addClass: 
     OnClick:
       m_PersistentCalls:
         m_Calls: []
-  - controlType: 0
-    Name: AUDIO
-    Value: 
+  - <Name>k__BackingField: AUDIO
+    <Value>k__BackingField: 
     route: /audio
-    Description: 
+    <Description>k__BackingField: 
     addClass: 
     OnClick:
       m_PersistentCalls:
         m_Calls: []
-  - controlType: 0
-    Name: GAMEPLAY
-    Value: 
+  - <Name>k__BackingField: GAMEPLAY
+    <Value>k__BackingField: 
     route: gameplay
-    Description: 
+    <Description>k__BackingField: 
     addClass: 
     OnClick:
       m_PersistentCalls:
         m_Calls: []
-  - controlType: 0
-    Name: CONTROLS
-    Value: 
+  - <Name>k__BackingField: CONTROLS
+    <Value>k__BackingField: 
     route: controls
-    Description: 
+    <Description>k__BackingField: 
     addClass: 
     OnClick:
       m_PersistentCalls:

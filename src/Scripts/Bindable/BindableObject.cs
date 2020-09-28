@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,8 +11,11 @@ namespace Graphene.Demo
 {
   // Atomic "Über" object for the view
   [System.Serializable, Draw(ControlType.Button)]
-  public class BindableObject : IRoute
+  public class BindableObject : IRoute, ICustomControlType
   {
+    [field: SerializeField]
+    public ControlType ControlType { get; set; }
+
     [field: SerializeField]
     [Bind("Label", BindingMode.OneWay)]
     public string Name { get; set; }
@@ -72,7 +77,7 @@ namespace Graphene.Demo
 
     public virtual void SetValueWithoutNotify(T newValue)
     {
-      m_Value = value;
+      m_Value = newValue;
     }
 
     protected virtual void ValueChangeCallback(T value)
@@ -94,7 +99,9 @@ namespace Graphene.Demo
   {
     public virtual float normalizedValue { get => throw new System.NotImplementedException(); }
 
+    [Bind("Min")]
     public TValueType min;
+    [Bind("Max")]
     public TValueType max;
 
   }
