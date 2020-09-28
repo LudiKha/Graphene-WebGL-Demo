@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1208eee4e87d74a47ad26bdfa80e6272, type: 3}
+  m_Name: VideoSettingsForm
+  m_EditorClassIdentifier: 
+  <Title>k__BackingField: VIDEO SETTINGS
+  <Render>k__BackingField: 1
+  FullScreen:
+    value: 0
+    Label: Fullscreen
+  AdaptiveResolution:
+    value: 1
+    Label: Adaptive Resolution
+  VSync:
+    value: 1
+    Label: V-Sync
+    min: 0
+    max: 0
+  Resolution:
+    value: 17
+    Label: Resolution
+    items:
+    - 320x200@60
+    - 320x240@60
+    - 400x300@60
+    - 512x384@60
+    - 640x400@60
+    - 640x480@60
+    - 800x600@60
+    - 1024x768@60
+    - 1152x864@60
+    - 1280x600@60
+    - 1280x720@60
+    - 1280x768@60
+    - 1280x800@60
+    - 1280x960@60
+    - 1280x1024@60
+    - 1360x768@60
+    - 1366x768@60
+    - 1400x1050@60
+    - 1440x900@60
+    - 1600x900@60
+    - 1600x1200@60
+    - 1680x1050@60
+    - 1792x1344@60
+    - 1856x1392@60
+    - 1920x1080@60
+    - 1920x1200@60
+    - 1920x1440@60
+    - 2048x1152@60
+    - 2048x1536@60
+    - 3840x2160@60
+  UIScale:
+    value: 3
+    Label: UI Scale
+    items:
+    - Tiny
+    - Small
+    - Medium
+    - Large
+    - Extra Large
+  settingsToScale: {fileID: 11400000, guid: a2848fad145986148b27f5def28a734a, type: 2}

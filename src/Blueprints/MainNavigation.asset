@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c77b204580fbe947b11e389b5321ed7, type: 3}
+  m_Name: MainNavigation
+  m_EditorClassIdentifier: 
+  <Title>k__BackingField: GRAPHENE DEMO
+  <Render>k__BackingField: 1
+  model:
+  - <Name>k__BackingField: NEW GAME
+    <Value>k__BackingField: 
+    route: start
+    <Description>k__BackingField: 
+    addClass: 
+    OnClick:
+      m_PersistentCalls:
+        m_Calls: []
+  - <Name>k__BackingField: LOAD GAME
+    <Value>k__BackingField: 
+    route: load
+    <Description>k__BackingField: 
+    addClass: 
+    OnClick:
+      m_PersistentCalls:
+        m_Calls: []
+  - <Name>k__BackingField: SETTINGS
+    <Value>k__BackingField: 
+    route: settings
+    <Description>k__BackingField: 
+    addClass: 
+    OnClick:
+      m_PersistentCalls:
+        m_Calls: []
+  - <Name>k__BackingField: CREDITS
+    <Value>k__BackingField: 
+    route: credits
+    <Description>k__BackingField: 
+    addClass: 
+    OnClick:
+      m_PersistentCalls:
+        m_Calls: []
+  - <Name>k__BackingField: EXIT
+    <Value>k__BackingField: 
+    route: exit
+    <Description>k__BackingField: 
+    addClass: 
+    OnClick:
+      m_PersistentCalls:
+        m_Calls: []
