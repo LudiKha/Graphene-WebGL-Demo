@@ -29,7 +29,7 @@ namespace Graphene.Demo
     public string route;
 
     [field: SerializeField]
-    [BindTooltip("Tooltip")]
+    [BindTooltip("Description")]
     public string Description { get; set; }
 
     #region FoldoutAttribute
@@ -62,7 +62,7 @@ namespace Graphene.Demo
     [BindBaseField("Value")]
     public virtual T value { get => m_Value; set {
         SetValueWithoutNotify(value);
-        ValueChangeCallback(value);
+        ValueChangeCallback(m_Value);
       } 
     }
 
@@ -103,7 +103,6 @@ namespace Graphene.Demo
     public TValueType min;
     [Bind("Max")]
     public TValueType max;
-
   }
 
   [System.Serializable, Draw(ControlType.Slider)]
@@ -117,6 +116,11 @@ namespace Graphene.Demo
       max = 1;
       m_Value = 0.5f;
     }
+
+    public override void SetValueWithoutNotify(float newValue)
+    {
+      m_Value = Mathf.Clamp(newValue, min, max);
+    }
   }
 
   [System.Serializable, Draw(ControlType.SliderInt)]
@@ -127,8 +131,13 @@ namespace Graphene.Demo
     public BindableInt()
     {
       min = 0;
-      max = 100;
-      m_Value = 50;
+      max = 10;
+      //m_Value = 5;
+    }
+
+    public override void SetValueWithoutNotify(int newValue)
+    {
+      m_Value = Mathf.Clamp(newValue, min, max);
     }
   }
 
