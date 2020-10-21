@@ -74,7 +74,14 @@ public class DemoCubeViewModel : MonoBehaviour, IModel
   {
     cube.rotation = Quaternion.Euler(rotationEuler);
   }
-  [Sirenix.OdinInspector.Button]
+
+  #region ButtonAttribute
+#if ODIN_INSPECTOR
+  [Sirenix.OdinInspector.Button, Sirenix.OdinInspector.HorizontalGroup("ShowHide")]
+#elif NAUGHTY_ATTRIBUTES
+    [NaughtyAttributes.Button]
+#endif
+  #endregion
   public void UpdateViewModel()
   {
     // 0 - 360
