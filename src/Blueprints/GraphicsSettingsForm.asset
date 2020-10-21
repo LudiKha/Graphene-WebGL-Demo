@@ -15,15 +15,15 @@ MonoBehaviour:
   <Title>k__BackingField: GRAPHICS SETTINGS
   <Render>k__BackingField: 1
   QualityLevel:
-    value: 5
-    Label: Quality level
-    items:
+    m_Value: 0
+    <Label>k__BackingField: Quality Level
+    <items>k__BackingField:
     - Low
     - Medium
     - High
-    - Best
+    - Ultra
   AntiAliasing:
-    value: 2
-    Label: Anti-Aliasing
+    m_Value: 2
+    <Label>k__BackingField: AntiAliasing
     min: 0
-    max: 0
+    max: 4
