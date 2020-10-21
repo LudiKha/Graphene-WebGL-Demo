@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Graphene-Sample-Project</title>
+    <title>Unity WebGL Player | Graphene</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -19,7 +19,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Graphene-Sample-Project</div>
+        <div id="unity-build-title">Graphene</div>
       </div>
     </div>
     <script>
@@ -30,8 +30,8 @@
         frameworkUrl: buildUrl + "/docs.framework.js",
         codeUrl: buildUrl + "/docs.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "Graphene",
-        productName: "Graphene-Sample-Project",
+        companyName: "CupBearer Interactive",
+        productName: "Graphene",
         productVersion: "0.1",
       };
 
@@ -48,6 +48,7 @@
         canvas.style.width = "960px";
         canvas.style.height = "600px";
       }
+      canvas.style.background = "url('" + buildUrl + "/docs.jpg') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
